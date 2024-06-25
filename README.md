@@ -1,2 +1,2 @@
 # ansible-epsi-delecroix-leo
-Répertoire pour ansible-epsi de delecroix-leo
+Répertoire DEV pour ansible-epsi par delecroix-leo
