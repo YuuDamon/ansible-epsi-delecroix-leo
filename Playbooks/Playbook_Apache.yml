@@ -1,0 +1,19 @@
+- name: Installation d'apache
+  hosts: haproxy01
+
+  tasks:
+  - name: Installation Apache Web Serveur
+    apt: 
+      name: apache2
+      state: present
+
+  - name: Installation de htop
+    apt: 
+      name: htop
+      state: present
+
+  - name: Démarrage Apache Web Serveur
+    service: 
+      name: apache2
+      state: started
+      enabled: yes
