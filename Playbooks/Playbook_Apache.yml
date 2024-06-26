@@ -1,19 +1,23 @@
 - name: Installation d'apache
-  hosts: haproxy01
+  hosts: STG_HAPROXY
 
   tasks:
-  - name: Installation Apache Web Serveur
+  - name: Installation des packages
     apt: 
-      name: apache2
+      name: 
+        - apache2
+        - htop
+        - sudo
       state: present
-
-  - name: Installation de htop
-    apt: 
-      name: htop
-      state: present
+      update_cache: yes
 
   - name: Démarrage Apache Web Serveur
     service: 
       name: apache2
       state: started
       enabled: yes
+
+  - name: Créer un fichier index.html
+    template:
+      src: index.html
+      dest: /var/www/html/index.html
